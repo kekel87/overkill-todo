@@ -7,8 +7,8 @@ describe('overkill-todo App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display Overkill todo !', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Overkill todo !');
   });
 });
