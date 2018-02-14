@@ -1,0 +1,25 @@
+<!-- <bc-book-preview-list [books]="books$ | async"></bc-book-preview-list> -->
+<!-- <a [routerLink]="['/books', id]"></a> -->
+
+<mat-card>
+  <mat-toolbar color="primary">
+    Todos
+    <!-- <button mat-fab class="fab-add" (click)="todoDialog()">
+      <mat-icon>add</md-icon>
+    </button> -->
+  </mat-toolbar>
+
+
+  <mat-card-content>
+    <div class="spinner-wrapper" *ngIf="loading$ | async">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <mat-list *ngIf="todos$ | async as todos">
+      <mat-list-item *ngFor="let todo of (todos); let index=index" class="list-item">
+        <mat-checkbox disabled="true" color="primary" type="checkbox" [name]="'item'+index" [(ngModel)]="todo.state"></mat-checkbox>
+        <span [class.completed]="todo.state">{{ todo.title }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

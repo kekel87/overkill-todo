@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {
   // Form Controls
   // MatAutocompleteModule,
-  // MatCheckboxModule,
+  MatCheckboxModule,
   // MatDatepickerModule,
   // MatFormFieldModule,
   // MatInputModule,
@@ -18,20 +18,20 @@ import {
   MatToolbarModule,
 
   // Layout
-  // MatCardModule,
+  MatCardModule,
   // MatDividerModule,
   // MatExpansionModule,
   // MatGridListModule,
-  // MatListModule,
+  MatListModule,
   // MatStepperModule,
   // MatTabsModule,
 
   // Bouttons & indicators
-  // MatButtonModule,
+  MatButtonModule,
   // MatButtonToggleModule,
   // MatChipsModule,
-  // MatIconModule,
-  // MatProgressSpinnerModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
   // MatProgressBarModule,
 
   // Popups & Modals
@@ -49,7 +49,7 @@ import {
 export const MATERIAL_MODULES = [
   // Form Controls
   // MatAutocompleteModule,
-  // MatCheckboxModule,
+  MatCheckboxModule,
   // MatDatepickerModule,
   // MatFormFieldModule,
   // MatInputModule,
@@ -64,20 +64,20 @@ export const MATERIAL_MODULES = [
   MatToolbarModule,
 
   // Layout
-  // MatCardModule,
+  MatCardModule,
   // MatDividerModule,
   // MatExpansionModule,
   // MatGridListModule,
-  // MatListModule,
+  MatListModule,
   // MatStepperModule,
   // MatTabsModule,
 
   // Bouttons & indicators
-  // MatButtonModule,
+  MatButtonModule,
   // MatButtonToggleModule,
   // MatChipsModule,
-  // MatIconModule,
-  // MatProgressSpinnerModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
   // MatProgressBarModule,
 
   // Popups & Modals

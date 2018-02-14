@@ -177,6 +177,10 @@
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-5.0.1.tgz#cf970a6b8e2f3d3647e795e7040e09a2e7d157ed"
 
+"@ngrx/entity@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-5.1.0.tgz#27de53bd10c7f93c82d8aa1642357c65657e1459"
+
 "@ngrx/store-devtools@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-5.0.1.tgz#f1bf5c54d4b2a512afd970e8114057b44e0d3c16"
@@ -352,6 +356,10 @@ amqplib@^0.5.2:
     buffer-more-ints "0.0.2"
     readable-stream "1.x >=1.1.9"
     safe-buffer "^5.0.1"
+
+angular-in-memory-web-api@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/angular-in-memory-web-api/-/angular-in-memory-web-api-0.5.3.tgz#49ba7b7d19210e14b0dbe62d2e3b63d4b4a29c4a"
 
 ansi-html@0.0.7:
   version "0.0.7"
