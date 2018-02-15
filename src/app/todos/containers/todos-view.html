@@ -1,21 +1,26 @@
-<mat-card *ngIf="todo$ | async as todo">
+<mat-card>
   <mat-toolbar color="primary">
-    {{ todo.title }}
+    Todo detail
+    <span class="spacer"></span>
+    <mat-spinner diameter="40" color="warn" *ngIf="microLoading$ | async"></mat-spinner>
   </mat-toolbar>
 
   <mat-card-content>
-    <div class="form">
-      <mat-form-field>
-        <input matInput placeholder="Titre" [value]="todo.title" readonly="true">
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput placeholder="Description" [value]="todo.description" readonly="true" matTextareaAutosize matAutosizeMinRows="2"
-          matAutosizeMaxRows="5"></textarea>
-      </mat-form-field>
-    </div>
-    <button mat-raised-button [routerLink]="['/todos']">
-      <mat-icon>arrow_back</mat-icon>
-      Retour
-    </button>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-input-container>
+        <input type="text" matInput placeholder="Titre" formControlName="title">
+        <mat-error *ngIf="isErrorState('title')">{{ getErrorMessage('title') }}</mat-error>
+      </mat-input-container>
+      <mat-input-container>
+        <textarea matInput placeholder="Description" formControlName="description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+      </mat-input-container>
+      <div class="form-btn">
+        <button mat-raised-button color="primary" type="submit" mat-button>Save</button>
+        <button mat-raised-button [routerLink]="['/todos']">
+          <mat-icon>arrow_back</mat-icon>
+          Retour
+        </button>
+      </div>
+    </form>
   </mat-card-content>
 </mat-card>

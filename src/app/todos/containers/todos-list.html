@@ -1,9 +1,9 @@
 <mat-card>
   <mat-toolbar color="primary">
+    <button mat-mini-fab [routerLink]="['/todos', 'new']">
+      <mat-icon>add</mat-icon>
+    </button>
     Todos
-    <!-- <button mat-fab class="fab-add" (click)="todoDialog()">
-      <mat-icon>add</md-icon>
-    </button> -->
     <span class="spacer"></span>
     <mat-spinner diameter="40" color="warn" *ngIf="microLoading$ | async"></mat-spinner>
   </mat-toolbar>

@@ -6,6 +6,10 @@
   }
 }
 
+mat-toolbar > button {
+  margin-right: 10px;
+}
+
 mat-checkbox {
   margin-right: 10px;
 }
@@ -21,8 +25,4 @@ mat-checkbox {
   height: 100%;
   display: flex;
   align-items: center;
-}
-
-.spacer {
-  flex: 1 1 auto;
 }

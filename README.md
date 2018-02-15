@@ -6,8 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - [X] 1 : List my TODOs
 - [X] 2 : Change a TODO state
-- [ ] 3 : Detail a TODO
-- [ ] 4 : Add a new TODO
+- [X] 3 : Detail a TODO
+- [X] 4 : Add a new TODO
 
 ## Development server
 

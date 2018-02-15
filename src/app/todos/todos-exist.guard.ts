@@ -52,6 +52,8 @@ export class TodoExistsGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    return this.hasTodo(route.params['id']);
+    return route.params['id'] === 'new'
+      ? of(true)
+      : this.hasTodo(route.params['id']);
   }
 }

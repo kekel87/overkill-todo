@@ -1,9 +1,14 @@
-.form {
+form {
   display: flex;
   flex-direction: column;
   padding: 10px 0;
 
-  & > * {
+  .mat-form-field {
     width: 100%;
+  }
+
+  .form-btn {
+    display: flex;
+    justify-content: space-around;
   }
 }
