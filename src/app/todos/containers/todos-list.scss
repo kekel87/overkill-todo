@@ -15,6 +15,14 @@ mat-checkbox {
   text-decoration: line-through;
 }
 
+.clickable {
+  cursor: pointer;
+  flex: 1 1 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .spacer {
   flex: 1 1 auto;
 }

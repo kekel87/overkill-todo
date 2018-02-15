@@ -10,7 +10,7 @@ describe('Todos page', () => {
   it('should show list my three current todos', () => {
     page.navigateTo();
     page.waitForList();
-    expect(page.getTodos().count()).toEqual(3);
+    expect(page.getTodos().count()).toEqual(4);
   });
 
   it('should change a todo state by checking a "box"', () => {

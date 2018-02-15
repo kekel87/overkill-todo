@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
+import { first } from 'rxjs/operators';
 
 import * as fromTodos from '../todos.reducer';
 import * as todos from '../todos.actions';
@@ -18,13 +19,20 @@ export class TodosListComponent implements OnInit {
   microLoading$: Observable<boolean>;
 
   constructor(private store: Store<fromTodos.State>) {
-    this.todos$ = this.store.pipe(select(fromTodos.selectAllTodos));
-    this.loading$ = this.store.pipe(select(fromTodos.selectTodosLoading));
-    this.microLoading$ = this.store.pipe(select(fromTodos.selectTodosMicroLoading));
+    this.todos$ = this.store.pipe(select(fromTodos.getAllTodos));
+    this.loading$ = this.store.pipe(select(fromTodos.getTodosLoading));
+    this.microLoading$ = this.store.pipe(select(fromTodos.getTodosMicroLoading));
   }
 
   ngOnInit() {
-    this.store.dispatch(new todos.Load());
+    this.store.pipe(
+      select(fromTodos.getTodosLoaded),
+      first()
+    ).subscribe((loaded) => {
+      if (!loaded) {
+        this.store.dispatch(new todos.Load());
+      }
+    });
   }
 
   toggleTodo(todo: Todo) {

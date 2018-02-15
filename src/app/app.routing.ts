@@ -8,7 +8,8 @@ const routes: Routes = [
     path: 'todos',
     loadChildren: './todos/todos.module#TodosModule'
   },
-  { path: '**', component: NotFoundPageComponent }
+  { path: '404', component: NotFoundPageComponent },
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({

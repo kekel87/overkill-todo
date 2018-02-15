@@ -15,6 +15,10 @@ export class TodosService {
     return this.http.get<Todo[]>(this.apiUrl);
   }
 
+  getTodo(id: string | number): Observable<Todo> {
+    return this.http.get<Todo>(`${this.apiUrl}/${id}`);
+  }
+
   saveTodo(todo: Todo): Observable<Todo> {
     if (todo.id) {
       return this.http.put<Todo>(this.apiUrl, todo);
@@ -22,4 +26,5 @@ export class TodosService {
 
     return this.http.post<Todo>(this.apiUrl, todo);
   }
+
 }

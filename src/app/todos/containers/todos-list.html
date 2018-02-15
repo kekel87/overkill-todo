@@ -1,7 +1,9 @@
-<!-- <bc-book-preview-list [books]="books$ | async"></bc-book-preview-list> -->
 <mat-card>
   <mat-toolbar color="primary">
     Todos
+    <!-- <button mat-fab class="fab-add" (click)="todoDialog()">
+      <mat-icon>add</md-icon>
+    </button> -->
     <span class="spacer"></span>
     <mat-spinner diameter="40" color="warn" *ngIf="microLoading$ | async"></mat-spinner>
   </mat-toolbar>
@@ -16,7 +18,9 @@
       <mat-list-item *ngFor="let todo of (todos); let index=index" class="list-item">
         <mat-checkbox (change)="toggleTodo(todo)" color="primary" type="checkbox" [name]="'item'+index" [(ngModel)]="todo.state">
         </mat-checkbox>
-        <span [class.completed]="todo.state">{{ todo.title }}</span>
+        <div class="clickable" [routerLink]="['/todos', todo.id]">
+          <span [class.completed]="todo.state">{{ todo.title }}</span>
+        </div>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
