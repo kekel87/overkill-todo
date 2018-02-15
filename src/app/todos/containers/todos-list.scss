@@ -9,3 +9,12 @@
 mat-checkbox {
   margin-right: 10px;
 }
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

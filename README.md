@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## TODOS
 
 - [X] 1 : List my TODOs
-- [ ] 2 : Change a TODO state
+- [X] 2 : Change a TODO state
 - [ ] 3 : Detail a TODO
 - [ ] 4 : Add a new TODO
 

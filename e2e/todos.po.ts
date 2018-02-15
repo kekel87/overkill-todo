@@ -1,4 +1,8 @@
-import { browser, by, element, ExpectedConditions, ElementArrayFinder } from 'protractor';
+import {
+  browser, by, element,
+  ExpectedConditions, ElementFinder, ElementArrayFinder,
+  $, $$
+} from 'protractor';
 
 const timeout = 2000;
 
@@ -8,18 +12,30 @@ export class TodosPage {
   }
 
   getLoader() {
-    return element(by.css('mat-spinner'));
+    return $('mat-spinner');
   }
 
   waitForList() {
-    browser.wait(ExpectedConditions.presenceOf(element(by.css('mat-card-content mat-list'))), timeout);
+    browser.wait(ExpectedConditions.presenceOf($('mat-card-content mat-list')), timeout);
   }
 
   getTodos() {
-    return element.all(by.css('mat-card-content mat-list mat-list-item'));
+    return $$('mat-card-content mat-list mat-list-item');
+  }
+
+  getTodoAtPosition(pos: number) {
+    return $(`mat-card-content mat-list mat-list-item:nth-of-type(${pos})`);
+  }
+
+  clickTodoCheckBox(todo: ElementFinder) {
+    return todo.$('mat-checkbox').click();
+  }
+
+  todoIsCheck(todo: ElementFinder) {
+    return todo.$('.mat-checkbox-checked') !== null;
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return $('app-root h1').getText();
   }
 }

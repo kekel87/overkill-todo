@@ -15,4 +15,11 @@ export class TodosService {
     return this.http.get<Todo[]>(this.apiUrl);
   }
 
+  saveTodo(todo: Todo): Observable<Todo> {
+    if (todo.id) {
+      return this.http.put<Todo>(this.apiUrl, todo);
+    }
+
+    return this.http.post<Todo>(this.apiUrl, todo);
+  }
 }

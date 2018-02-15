@@ -12,4 +12,13 @@ describe('Todos page', () => {
     page.waitForList();
     expect(page.getTodos().count()).toEqual(3);
   });
+
+  it('should change a todo state by checking a "box"', () => {
+    page.navigateTo();
+    page.waitForList();
+
+    const todo = page.getTodoAtPosition(1);
+    page.clickTodoCheckBox(todo);
+    expect(page.todoIsCheck(todo)).toBeTruthy();
+  });
 });

@@ -4,7 +4,10 @@ import { Todo } from './todo';
 export enum TodosActionTypes {
   Load = '[Todos] Load',
   LoadSuccess = '[Todos] Load Success',
-  LoadFail = '[Todos] Load Fail'
+  LoadFail = '[Todos] Load Fail',
+  Save = '[Todos] Save',
+  SaveSuccess = '[Todos] Save Success',
+  SaveFail = '[Todos] Save Fail'
 }
 
 export class Load implements Action {
@@ -14,7 +17,7 @@ export class Load implements Action {
 export class LoadSuccess implements Action {
   readonly type = TodosActionTypes.LoadSuccess;
 
-  constructor(public payload: Todo[]) { }
+  constructor(public todos: Todo[]) { }
 }
 
 export class LoadFail implements Action {
@@ -23,7 +26,28 @@ export class LoadFail implements Action {
   constructor(public payload: any) { }
 }
 
+export class Save implements Action {
+  readonly type = TodosActionTypes.Save;
+
+  constructor(public todo: Todo) { }
+}
+
+export class SaveSuccess implements Action {
+  readonly type = TodosActionTypes.SaveSuccess;
+
+  constructor(public todo: Todo) { }
+}
+
+export class SaveFail implements Action {
+  readonly type = TodosActionTypes.SaveFail;
+
+  constructor(public payload: any) { }
+}
+
 export type TodosActions =
   | Load
   | LoadSuccess
-  | LoadFail;
+  | LoadFail
+  | Save
+  | SaveSuccess
+  | SaveFail;

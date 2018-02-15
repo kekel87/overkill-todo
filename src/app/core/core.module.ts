@@ -26,7 +26,7 @@ export const COMPONENTS = [
 
     environment.useHttpMock
       ? HttpClientInMemoryWebApiModule.forRoot(
-        InMemoryDataService, { delay: 1000 }
+        InMemoryDataService, { delay: 1000, post204: false, put204: false }
       )
       : []
 
