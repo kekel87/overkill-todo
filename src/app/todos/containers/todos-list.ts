@@ -1,11 +1,11 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 
-import * as fromTodos from '../todos.reducer';
-import * as todos from '../todos.actions';
 import { Todo } from '../todo';
+import * as todos from '../todos.actions';
+import * as fromTodos from '../todos.reducer';
 
 @Component({
   selector: 'app-todos-list',

@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { Effect, Actions, ofType } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { switchMap, toArray, map, catchError, mergeMap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 
-import { TodosService } from './todos.service';
+import { Todo } from './Todo';
 import {
-  TodosActions,
-  TodosActionTypes,
-  Load,
   LoadFail,
   LoadSuccess,
   Save,
+  SaveFail,
   SaveSuccess,
-  SaveFail
+  TodosActionTypes,
 } from './todos.actions';
-import { Todo } from './Todo';
+import { TodosService } from './todos.service';
 
 @Injectable()
 export class TodosEffects {

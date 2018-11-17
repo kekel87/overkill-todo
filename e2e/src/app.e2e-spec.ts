@@ -9,6 +9,6 @@ describe('overkill-todo App', () => {
 
   it('should display Overkill todo !', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Overkill todo !');
+    expect(page.getTitleText()).toEqual('Overkill todo !');
   });
 });

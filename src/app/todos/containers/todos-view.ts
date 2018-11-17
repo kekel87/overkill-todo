@@ -1,14 +1,12 @@
-import { Component, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import { map, take, filter } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
+import { filter, map, take } from 'rxjs/operators';
 
-import * as fromTodos from '../todos.reducer';
 import * as todos from '../todos.actions';
-import { Todo } from '../todo';
+import * as fromTodos from '../todos.reducer';
 
 @Component({
   selector: 'app-todos-view',

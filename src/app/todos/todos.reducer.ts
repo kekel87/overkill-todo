@@ -1,5 +1,5 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { Todo } from './todo';
 import { TodosActions, TodosActionTypes } from './todos.actions';
@@ -54,41 +54,26 @@ export function reducer(
     }
 
     case TodosActionTypes.LoadFail: {
-      return Object.assign({
-        ...state,
-        loading: false
-      });
+      return { ...state, loading: false };
     }
 
     case TodosActionTypes.Save: {
-      return Object.assign({
-        ...state,
-        microLoading: true
-      });
+      return { ...state, microLoading: true };
     }
 
     case TodosActionTypes.SaveSuccess: {
-      return adapter.upsertOne({
-        id: action.todo.id,
-        changes: action.todo,
-      }, {
-          ...state,
-          microLoading: false
-        });
-    }
-
-    case TodosActionTypes.SaveFail: {
-      return Object.assign({
+      return adapter.upsertOne(action.todo, {
         ...state,
         microLoading: false
       });
     }
 
+    case TodosActionTypes.SaveFail: {
+      return { ...state, microLoading: false };
+    }
+
     case TodosActionTypes.Select: {
-      return Object.assign({
-        ...state,
-        selectedTodoId: action.todoId,
-      });
+      return { ...state, selectedTodoId: action.todoId };
     }
 
     default: {

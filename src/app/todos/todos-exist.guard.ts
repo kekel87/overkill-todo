@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Router, CanActivate, ActivatedRouteSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { filter, take, map, tap, catchError, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
+import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
+import { map, switchMap, take, tap } from 'rxjs/operators';
 
-import { TodosService } from './todos.service';
-import * as fromTodos from './todos.reducer';
 import * as todosActions from './todos.actions';
+import * as fromTodos from './todos.reducer';
+import { TodosService } from './todos.service';
 
 @Injectable()
 export class TodoExistsGuard implements CanActivate {

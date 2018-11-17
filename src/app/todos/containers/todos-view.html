@@ -7,13 +7,15 @@
 
   <mat-card-content>
     <form [formGroup]="form" (ngSubmit)="submit()">
-      <mat-input-container>
-        <input type="text" matInput placeholder="Titre" formControlName="title">
+      <mat-form-field>
+        <input matInput placeholder="Titre" formControlName="title" type="text">
         <mat-error *ngIf="isErrorState('title')">{{ getErrorMessage('title') }}</mat-error>
-      </mat-input-container>
-      <mat-input-container>
-        <textarea matInput placeholder="Description" formControlName="description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
-      </mat-input-container>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Description" formControlName="description" matTextareaAutosize
+          matAutosizeMinRows="2" matAutosizeMaxRows="5">
+        </textarea>
+      </mat-form-field>
       <div class="form-btn">
         <button mat-raised-button color="primary" type="submit" mat-button>Save</button>
         <button mat-raised-button [routerLink]="['/todos']">
